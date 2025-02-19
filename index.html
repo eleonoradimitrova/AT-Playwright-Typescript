@@ -4,33 +4,35 @@
 <head>
     <meta charset="utf-8" />
     <title>AT Playwright Typescript</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html" target="_blank">About</a></li>
-                <li><a href="contacts.html" target="_blank">Contacts</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contacts.html">Contacts</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <h1>Welcome to our page</h1>
-        <section>
+        <section class="search-bar">
             <input type="text" placeholder="Search..."/>
             <button>Search</button>
         </section>
-        <section>
+        <section class="image-container">
             <img width="250" alt="test image" src="./assets/image1.jpg"/>
             <img width="250" alt="test image" src="./assets/image2.jpg"/>
             <img width="250" alt="test image" src="./assets/image3.jpg"/>
         </section>
 
-        <section>
+        <section class="description">
             <h3>Description</h3>
+            <h4>Description</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
     </main>
