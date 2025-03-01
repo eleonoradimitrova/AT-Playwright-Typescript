@@ -11,7 +11,7 @@ console.log("The array after removing the first element is: " + numsArray);
 //  Use the map method to create a new array and divide each number by 2  “num / 2”   from [1, 2, 3, 4, 5].  Log the result.
 numsArray.unshift(1);
 let divideNumbers: number[] = numsArray.map((element: number) => element / 2);
-console.log("The array with elements divided by 2 isgit status: " + divideNumbers);
+console.log("The array with elements divided by 2 is: " + divideNumbers);
 
 // Use the filter method to create a new array containing only numbers greater than 5 from [3, 7, 1, 9, 12, 4]. Log the result.
 let filteredArray: number[] = [3, 7, 1, 9, 12, 4];
