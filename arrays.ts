@@ -16,9 +16,9 @@ numbersArray.unshift(5);
 
 let multiplyNumbers: number[] = numbersArray.map((element: number) => element * 2);
 let multiplySpesialNumbers = numbersArray.map((element: number) => {
-    if(element>2){
+    if (element > 2) {
         return element * 2;
-    }else{
+    } else {
         return element;
     }
 });
