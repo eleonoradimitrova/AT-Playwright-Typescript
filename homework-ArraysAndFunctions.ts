@@ -15,9 +15,7 @@ console.log("The array with elements divided by 2 is: " + divideNumbers);
 
 // Use the filter method to create a new array containing only numbers greater than 5 from [3, 7, 1, 9, 12, 4]. Log the result.
 let filteredArray: number[] = [3, 7, 1, 9, 12, 4];
-let filtteredNumbersArray = filteredArray.filter((element: number) => {
-    return element > 5;
-});
+let filtteredNumbersArray = filteredArray.filter((element) => element > 5);
 console.log("Numbers greater than 5 are: " + filtteredNumbersArray);
 
 // Use the sort method to sort an array of numbers [9, 3, 7, 2, 8, 5] in ascending order. Log the result.
@@ -38,17 +36,13 @@ console.log("The array without removed elements is: " + vehiclesArray);
 
 // Write a function named “findLargest” that takes three numbers as parameters and returns the largest of them. Use if/else statement to find the largest number. Log the result.
 function findLargest(firstNumber: number, secondNumber: number, thirdNumber: number): number {
-    if (firstNumber > secondNumber) {
-        if (firstNumber > thirdNumber) {
-            return firstNumber;
-        }
-        return thirdNumber;
-    } else {
-        if (secondNumber > thirdNumber) {
-            return secondNumber;
-        }
-        return thirdNumber;
+    if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+        return firstNumber;
     }
+    if (secondNumber > thirdNumber) {
+        return secondNumber;
+    }
+    return thirdNumber;
 }
 console.log("The largest number is " + findLargest(9, 4, 3));
 // Write a function “convertToCentimeters”  which receives parameter “inches” and add default value it and convert to centimeters. Log the result with default parameter and with passed parameter.
