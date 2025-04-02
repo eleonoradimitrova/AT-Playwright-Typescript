@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Playwright home oage testing", () => {
+test.describe("Playwright home page testing", () => {
   test.beforeEach("Navigate to the home page", async ({ page }) => {
     const url = process.env.BASE_URL as string;
     await page.goto(url, { timeout: 60000 });
