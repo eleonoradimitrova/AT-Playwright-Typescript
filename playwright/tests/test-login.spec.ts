@@ -21,19 +21,22 @@ const incorrectPasswordInput: Inputs = {
 };
 
 const fillFields = async (page: Page, inputs: Inputs) => {
-  //Locate and fill username input
-  const usernameInput = page.locator("xpath=//input[@id='username']");
-  await expect(usernameInput).toBeVisible();
-  await usernameInput.fill(inputs.username);
-  await expect(usernameInput).toHaveValue(inputs.username);
+  await test.step("Enter username", async () => {
+    //Locate and fill username input
+    const usernameInput = page.locator("xpath=//input[@id='username']");
+    await expect(usernameInput).toBeVisible();
+    await usernameInput.fill(inputs.username);
+    await expect(usernameInput).toHaveValue(inputs.username);
+  });
 
-  //Locate and fill password field
-  const password = page.locator("xpath=//input[@id='password']");
-  await expect(password).toBeVisible();
-  await password.fill(inputs.password);
-  await expect(password).toHaveValue(inputs.password);
+  await test.step("Enter Password", async () => {
+    //Locate and fill password field
+    const password = page.locator("xpath=//input[@id='password']");
+    await expect(password).toBeVisible();
+    await password.fill(inputs.password);
+    await expect(password).toHaveValue(inputs.password);
+  });
 };
-
 test.describe("Test Basic HTML Form", () => {
   test.beforeEach("Go to HTML Form Page", async ({ page }) => {
     const htmlFormUrl = process.env.TEST_PAGE_URL as string;
