@@ -16,48 +16,62 @@ const results = {
 };
 
 const fillFields = async (page: Page, resultsObj: Results) => {
-  //Locate and fill username input
-  const usernameInput = page.locator("xpath=//input[@name='username']");
-  await expect(usernameInput).toBeVisible();
-  await usernameInput.fill(resultsObj.username);
-  await expect(usernameInput).toHaveValue(resultsObj.username);
+  await test.step("Enter username", async () => {
+    //Locate and fill username input
+    const usernameInput = page.locator("xpath=//input[@name='username']");
+    await expect(usernameInput).toBeVisible();
+    await usernameInput.fill(resultsObj.username);
+    await expect(usernameInput).toHaveValue(resultsObj.username);
+  });
 
-  //Locate and fill password field
-  const password = page.locator("xpath=//input[@name='password']");
-  await expect(password).toBeVisible();
-  await password.fill(resultsObj.password);
-  await expect(password).toHaveValue(resultsObj.password);
+  await test.step("Enter Password", async () => {
+    //Locate and fill password field
+    const password = page.locator("xpath=//input[@name='password']");
+    await expect(password).toBeVisible();
+    await password.fill(resultsObj.password);
+    await expect(password).toHaveValue(resultsObj.password);
+  });
 
-  //Locate and fill comments field
-  const commentsField = page.locator("xpath=//textarea[@name='comments']");
-  await expect(commentsField).toBeVisible();
-  await commentsField.fill(resultsObj.comments);
-  await expect(commentsField).toHaveValue(resultsObj.comments);
+  await test.step("Fill comments field", async () => {
+    //Locate and fill comments field
+    const commentsField = page.locator("xpath=//textarea[@name='comments']");
+    await expect(commentsField).toBeVisible();
+    await commentsField.fill(resultsObj.comments);
+    await expect(commentsField).toHaveValue(resultsObj.comments);
+  });
 
-  //Locate and check the checkbox
-  const checkboxEl = page.locator("xpath=//input[@value='cb2']");
-  await expect(checkboxEl).toBeVisible();
-  await checkboxEl.check();
-  await expect(checkboxEl).toBeChecked();
+  await test.step("Select checkbox value", async () => {
+    //Locate and check the checkbox
+    const checkboxEl = page.locator("xpath=//input[@value='cb2']");
+    await expect(checkboxEl).toBeVisible();
+    await checkboxEl.check();
+    await expect(checkboxEl).toBeChecked();
+  });
 
-  //Locate and check the radio buttons
-  const radioItemEl = page.locator("xpath=//input[@value='rd3']");
-  await expect(radioItemEl).toBeVisible();
-  await radioItemEl.check();
-  await expect(radioItemEl).toBeChecked();
+  await test.step("Select radio button", async () => {
+    //Locate and check the radio buttons
+    const radioItemEl = page.locator("xpath=//input[@value='rd3']");
+    await expect(radioItemEl).toBeVisible();
+    await radioItemEl.check();
+    await expect(radioItemEl).toBeChecked();
+  });
 
-  //Locate and select option from dropdown
-  const dropdown = page.locator("xpath=//select[@name='dropdown']");
-  await expect(dropdown).toBeVisible();
-  await dropdown.selectOption(resultsObj.dropdownValue);
-  await expect(dropdown).toHaveValue(resultsObj.dropdownValue);
+  await test.step("Select dropdown option", async () => {
+    //Locate and select option from dropdown
+    const dropdown = page.locator("xpath=//select[@name='dropdown']");
+    await expect(dropdown).toBeVisible();
+    await dropdown.selectOption(resultsObj.dropdownValue);
+    await expect(dropdown).toHaveValue(resultsObj.dropdownValue);
+  });
 
-  //Locate upload button and upload a file
-  const uploadBtn = page.locator("xpath=//input[@type='file']");
-  const filePath = path.resolve(__dirname, "./test.txt");
+  await test.step("Upload file", async () => {
+    //Locate upload button and upload a file
+    const uploadBtn = page.locator("xpath=//input[@type='file']");
+    const filePath = path.resolve(__dirname, "./test.txt");
 
-  await expect(uploadBtn).toBeVisible();
-  await uploadBtn.setInputFiles(filePath);
+    await expect(uploadBtn).toBeVisible();
+    await uploadBtn.setInputFiles(filePath);
+  });
 };
 
 // Wrap all tests within a describe block to improve structure.
