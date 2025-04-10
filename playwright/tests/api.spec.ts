@@ -28,10 +28,10 @@ test("API Test 2 - GET Products", async ({ request }) => {
 
   await expect(response.status()).toBe(200);
 
-  // await expect(responseBody).toContainEqual(
-  //   expect.objectContaining({
-  //     title:
-  //       "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-  //   })
-  // );
+  await expect(responseBody).toEqual(
+    expect.objectContaining({
+      title:
+        "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    })
+  );
 });
