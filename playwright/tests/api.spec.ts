@@ -16,3 +16,22 @@ test("API Test - GET Products", async ({ request }) => {
     })
   );
 });
+
+test("API Test 2 - GET Products", async ({ request }) => {
+  const requestURL = "https://fakestoreapi.com/products/5";
+
+  const response = await request.get(requestURL);
+
+  const responseBody = await response.json();
+
+  await expect(response.ok()).toBeTruthy();
+
+  await expect(response.status()).toBe(200);
+
+  await expect(responseBody).toEqual(
+    expect.objectContaining({
+      title:
+        "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    })
+  );
+});
