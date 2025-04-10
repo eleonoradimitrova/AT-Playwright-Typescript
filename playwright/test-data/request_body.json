@@ -1,0 +1,8 @@
+{
+  "id": 21,
+  "title": "Test title",
+  "price": 0.1,
+  "description": "test description",
+  "category": "test category",
+  "image": "http://example.com"
+}
